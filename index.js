@@ -24,12 +24,12 @@ botaoAdicionar.addEventListener("click", (evento) => {
         }else{
             nomeItem.style.textDecoration = "none";
         }
-    })
+    });
 
     containerItemDaLista.appendChild(inputCheckBox);
     containerItemDaLista.appendChild(nomeItem);
     itemDaLista.appendChild(containerItemDaLista);
-    
+
     const diaDaSemana = new Date().toLocaleDateString("pt-BR", {
         weekday: "long"
     });
@@ -43,5 +43,20 @@ botaoAdicionar.addEventListener("click", (evento) => {
     itemData.innerText = dataCompleta;
     itemDaLista.appendChild(itemData);
     listaDeCompras.appendChild(itemDaLista);
-})
+    
+    verificarListaVazia();
+});
+
+const listaVazia = document.querySelector(".lista-vazia");
+
+function verificarListaVazia(){
+    const itensDaLista = listaDeCompras.querySelectorAll("li");
+    if (itensDaLista.length == 0){
+        listaVazia.style.display = "block";
+    }else{
+        listaVazia.style.display = "none";
+    };
+};
+
+verificarListaVazia();
 
