@@ -29,6 +29,7 @@ botaoAdicionar.addEventListener("click", (evento) => {
     containerItemDaLista.appendChild(inputCheckBox);
     containerItemDaLista.appendChild(nomeItem);
     itemDaLista.appendChild(containerItemDaLista);
+    
     const diaDaSemana = new Date().toLocaleDateString("pt-BR", {
         weekday: "long"
     });
