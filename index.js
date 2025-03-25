@@ -1,4 +1,5 @@
 import { criarItemDaLista } from "./scripts/criarItemDaLista.js";
+import verificarListaVazia from "./scripts/verificarListaVazia.js";
 
 const listaDeCompras = document.getElementById("lista-de-compras");
 const botaoAdicionar = document.getElementById("adicionar-item");
@@ -7,19 +8,8 @@ botaoAdicionar.addEventListener("click", (evento) => {
     evento.preventDefault();
     const itemDaLista = criarItemDaLista();
     listaDeCompras.appendChild(itemDaLista);
-    verificarListaVazia();
+    verificarListaVazia(listaDeCompras);
 });
 
-const listaVazia = document.querySelector(".lista-vazia");
-
-function verificarListaVazia(){
-    const itensDaLista = listaDeCompras.querySelectorAll("li");
-    if (itensDaLista.length == 0){
-        listaVazia.style.display = "block";
-    }else{
-        listaVazia.style.display = "none";
-    };
-};
-
-verificarListaVazia();
+verificarListaVazia(listaDeCompras);
 
